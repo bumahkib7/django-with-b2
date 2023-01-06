@@ -1,0 +1,87 @@
+// Declare variables for use throughout the stylesheet
+$primary-color: #f00;
+$secondary-color: #00f;
+
+// Define a mixin for creating responsive font sizes
+@mixin responsive-font-size($font-size, $line-height: 1.5) {
+  font-size: $font-size;
+  line-height: $line-height;
+
+  @media (max-width: 768px) {
+    font-size: $font-size * 0.75;
+    line-height: $line-height * 0.75;
+  }
+}
+
+// Use the mixin to create a responsive h1 element
+h1 {
+  @include responsive-font-size(48px);
+  color: $primary-color;
+}
+
+// Define styles for the navigation element
+nav {
+  background-color: $secondary-color;
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    li {
+      display: inline-block;
+
+      a {
+        display: block;
+        padding: 10px 20px;
+        color: #fff;
+        text-decoration: none;
+
+        &:hover {
+          color: $primary-color;
+        }
+      }
+    }
+  }
+}
+
+// Add styles specific to the base
+html {
+  body {
+    font-family: sans-serif;
+    color: #333;
+  }
+}
+
+// Add styles specific to the home page
+.home {
+  .hero {
+    background-color: $primary-color;
+    color: #fff;
+    padding: 20px;
+  }
+}
+
+// Add styles specific to the about page
+.about {
+  .hero {
+    background-color: $secondary-color;
+    color: #fff;
+    padding: 20px;
+  }
+}
+
+// Add styles specific to the contact page
+.contact {
+  .hero {
+    background-color: #333;
+    color: #fff;
+    padding: 20px;
+  }
+}
+
+// Add styles specific to the footer
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+}

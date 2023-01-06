@@ -1,0 +1,9 @@
+<form method="post" action="{% url 'download_files' %}">
+    {% csrf_token %}
+    {% for file_name in file_names %}
+        <label>
+            <input type="checkbox" name="selected_files" value="{{ file_name }}">
+        </label> {{ file_name }}<br>
+    {% endfor %}
+    <button type="submit">Download selected files</button>
+</form>

@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+    {% if selected_files %}
+
+        {% for file_name in selected_files %}
+            {{ file_name }}
+        {% endfor %}
+    {% else %}
+        <p>No files available. Do you want to return to add files?</p>
+    <button onclick="window.location.href = '{% url 'upload_file' %}';">Return to Upload</button>
+
+    {% endif %}
+
+{% endblock %}
+
+{% block scripts %}
+    <script>
+        window.setTimeout(function () {
+            for (const sElement of window.location.href = '{% url 'upload_file' %}') {
+                
+            };
+        }, 3000);
+    </script>
+{% endblock %}
